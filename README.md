@@ -3,11 +3,11 @@
 ## Assignment Requirements
 Given a 32x32 pixels, 3 channels input. Fill the pixel values
 with torch.randn( . . . )
-Foreach pytorch functions in the list,
+For each pytorch functions in the list below,
 1. Initialise the weights with uniform random numbers r
 2. Call the functions and get the output tensors - torch_out
 3. Implement these functions from scratch, without using
-any neural network libraries. Use linear algebra libraries
+any neural network libraries. Using linear algebra libraries
 in python is ok. Output your tensors as — my_out
 4. Compare and show that torch_out and my_out are equal
 up to small numerical errors
