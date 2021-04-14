@@ -17,7 +17,6 @@ class NeuralNet(nn.Module):
         return x
 
 def maxpooling(feature_map, size=2, stride=1):
-    # Preparing the output of the pooling operation.
     output_h = int(((feature_map.shape[2]-size) / stride) + 1)
     output_w = int(((feature_map.shape[3]-size) / stride) + 1)
     output_d = feature_map.shape[1]
@@ -29,8 +28,6 @@ def maxpooling(feature_map, size=2, stride=1):
         for r in np.arange(0, feature_map.shape[2] - (size-1), stride):
             c2 = 0
             for c in np.arange(0, feature_map.shape[3] - (size-1), stride):
-                # print(torch.max(feature_map[0][map_num, r:r + size, c:c + size]))
-                # quit()
                 pool_out[map_num, r2, c2] = torch.max(feature_map[0][map_num, r:r + size, c:c + size])
                 c2 = c2 + 1
             r2 = r2 + 1
