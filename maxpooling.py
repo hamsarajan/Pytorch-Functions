@@ -31,7 +31,7 @@ def maxpooling(feature_map, size=2, stride=1):
                 pool_out[map_num, r2, c2] = torch.max(feature_map[0][map_num, r:r + size, c:c + size])
                 c2 = c2 + 1
             r2 = r2 + 1
-    pool_out = np.array([pool_out])
+    pool_out = torch.tensor([pool_out])
     # print("size of maxpool output: ", pool_out.shape)
     return pool_out
     
@@ -44,10 +44,7 @@ dummy_input = torch.tensor([[[[1, 5, 8, 1], [6, 4, 6, 7], [1, 2, 4, 5], [5, 3, 3
 my_out = maxpooling(input)
 model = NeuralNet()
 torch_out = model(input)
-n_digits = 4
-# my_out = np.around(my_out, decimals=2)
-# torch_out = np.around(torch_out, decimals=2)
-my_out = torch.from_numpy(my_out)
+
 print("TORCH_OUT: ", torch_out)
 print("~"*100)
 print("MY_OUT: ", my_out)
