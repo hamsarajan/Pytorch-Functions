@@ -27,8 +27,6 @@ def crossEntropy(input, target):
     return loss/target.shape[0]
 
 if __name__ == '__main__':
-    # example()
-    # quit()
     input = torch.randn(1, 3, 32, 32)
     target = torch.tensor([1, 0, 0])
 
@@ -39,10 +37,9 @@ if __name__ == '__main__':
     input = input.type(torch.FloatTensor)
     print(input.shape)
     print(target.shape)
-    # quit()
+
     torch_out = F.cross_entropy(input, target, weight=None, size_average=None, ignore_index=-100, reduce=None, reduction='mean')
     my_out = crossEntropy(input, target)
-
 
     print("TORCH_OUT: ", torch_out)
     print("~" * 100)
