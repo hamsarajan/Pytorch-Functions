@@ -1,4 +1,4 @@
-# Assignment_3
+# Pytorch Functions
 
 ## Assignment Requirements
 Given a 32x32 pixels, 3 channels input. Fill the pixel values
